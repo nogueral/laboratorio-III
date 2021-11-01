@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases</title>
+</head>
+<body>
+    <script>
+        class Persona{
+
+            constructor(nombre,edad,hambre = false){
+                this.nombre = nombre;
+                this.edad = edad;
+                this.hambre = hambre;
+            }
+
+            saludar(){
+                console.log("Hola me llamo " + this.nombre);
+            }
+
+            set Nombre(value){
+                this.nombre = value;
+            }
+
+            get Nombre(){
+                return this.nombre;
+            }
+
+            static sumar(a, b){
+                return a + b;
+            }
+        }
+
+        class Empleado extends Persona{
+
+            constructor(nombre,edad,hambre, legajo){
+                super(nombre,edad,hambre);
+                this.legajo=legajo;
+            }
+
+            saludar(){
+                console.log("Hola me llamo " + this.nombre + " y mi legajo es " + this.legajo);
+            }
+        }
+
+
+
+        const obj = new Persona("Miguel", 28, true);
+
+        
+        obj.saludar()
+        obj.Nombre = "Mario";
+        console.log(obj.Nombre);
+
+        console.log(Persona.sumar(5,6));
+
+        const obj2 = new Empleado("Miguel", 28, true, 1234);
+
+        console.log(obj);
+        console.log(obj2);
+        obj.saludar();
+        obj2.saludar();
+    </script>
+</body>
+</html>

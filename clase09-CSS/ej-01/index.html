@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <title>CSS</title>
+</head>
+<body>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            background-color: blue;
+            width: 50vw;
+            height: 50vh;
+            margin: 10px;
+            border-width: 1px;
+            border-color: black;
+            border-style: solid;
+            /*border: 1px solid black;*/
+            box-sizing: border-box; /* el contenido se adapta a lo que le paso por width y height, con content-box las propiedades padding, border y margin se suman a los parametros antes mencionados*/
+            background-image: url(./epidata.jpeg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            /*width: 100%;
+            max-width: 600px;*/
+            display: inline-block;
+        }
+        div:hover{
+            background-color: red;
+            margin-left: -40px;
+            transition: background-color 5s, margin-left 5s;
+        }
+        .rojo, h2{
+            background-color: rgba(241, 21, 21, 0.685);
+            font-family: 'Rock Salt', cursive;
+        }
+        .dashed{
+            border: 5px dashed #0000FF;
+        }
+        #div-3{
+            background-color: yellowgreen;
+        }
+
+
+        @media screen and (max-width:500px){
+            div{
+                background-color: royalblue;
+                border: 2px dashed grey;
+            }
+        }
+    </style>
+    <h2>h2 con clase rojo</h2>
+    <div id="div1">
+
+    </div>
+    <div id="div2" class="rojo dashed">
+        
+    </div>
+    <div id="div-3">
+
+    </div>
+    <p class="rojo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, quasi. Veritatis omnis assumenda molestias dolor dolorem soluta, commodi autem, iure quia corrupti quis eos obcaecati error officia beatae nostrum perspiciatis.</p>
+</body>
+</html>

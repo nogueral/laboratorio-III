@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/scripts.js" type="module"></script>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Concesionaria</title>
+</head>
+    
+<body>
+    <header>
+        <img src="./assets/portada.jpg" />
+        <nav>
+            <a href="#">Nosotros</a>
+            <a href="#">Anuncio</a>
+            <a href="#">Blog</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+    <main>
+
+        <h1>Administracion</h1>
+
+    <div class="container">
+        <img src="./assets/autosvarios.jpg" id="imagenBajoPortada" />
+    <form>
+        <fieldset>
+            <legend>Informacion del Anuncio</legend>
+
+            <input type="hidden" name="id">
+
+            <h3>Titulo</h3>
+
+            <input type="text" name="titulo" placeholder="Titulo" required><br><br>
+
+            <h3>Transaccion</h3>
+            Venta <input type="radio"  name="transaccion" value="Venta"><br>
+            Alquiler <input type="radio" name="transaccion" value="Alquiler"><br>
+
+            <h3>Descripcion</h3>
+            <input type="text" name="descripcion" placeholder="Descripcion" required><br><br>
+
+            <h3>Precio</h3>
+            <input type="number" name="precio" step="0.01"  placeholder="Precio" required><br><br>
+
+            <h3>Cantidad de Puertas</h3>
+            <input type="number" name="num_puertas" placeholder="Puertas" required><br><br>
+
+            <h3>KMs</h3>
+            <input type="number" name="num_kmh" placeholder="KMs" required><br><br>
+
+            <h3>Potencia</h3>
+            <input type="number" name="potencia" placeholder="Potencia" required><br><br>
+
+        </fieldset>
+        <input type="submit" id="btnSubmit" value="Guardar"> 
+        <input type="button" id="btnEliminar" class="oculto" value="Eliminar" > 
+
+    </form>
+
+    <div id ="spinner-container"></div>
+    <div id="divLista"></div>
+</div>
+</main>
+<footer>
+    <nav >
+        <a href="#">Nosotros</a>
+        <a href="#">Anuncio</a>
+        <a href="#">Blog</a>
+        <a href="#">Contacto</a>
+    </nav>
+    <p>Todos los derechos reservados <date>2021</date>&copy;</p>
+  </footer>
+</body>
+</html>

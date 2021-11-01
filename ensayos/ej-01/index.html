@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/scripts.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/9640448c9c.js" crossorigin="anonymous"></script>
+    <title>Autos</title>
+</head>
+<body>
+    <header>
+        <div class="navegacion">
+            <img src="./assets/logo.png" height="80px" alt="logo-autos">
+            <nav class="itemsNav">
+                <a href="#">Nosotros</a>
+                <a href="#">Anuncios</a>
+                <a href="#">Blog</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </div>
+        <div class="encabezado">
+            <h1>
+                Administración
+            </h1>
+        </div>
+        <div class="imagen-encabezado"></div>
+    </header>
+    <main>
+        <form class="formulario" action="">
+            <fieldset>
+                <legend>Información del anuncio</legend>
+                <label for="titulo">TITULO:</label>
+                <input type="text" name="titulo" id="titulo" placeholder="Titulo" autocomplete="off" required>
+                <label for="transaccion">TRANSACCION:</label>
+                <select name="transaccion" id="transaccion" required>
+                    <option value="venta">Venta</option>
+                    <option value="alquiler">Alquiler</option>
+                    <option value="permuta">Permuta</option>
+                </select>
+                <label for="descripcion">DESCRIPCION:</label>
+                <input type="text" name="descripcion" autocomplete="off" id="descripcion" placeholder="Descripcion" required>
+                <label for="precio">PRECIO:</label>
+                <input type="number" name="precio" autocomplete="off" id="precio" placeholder="Precio" required>
+                <div class="fieldsetItems">
+                    <label for="puertas"><span><i class="fas fa-car"></i></span><input type="number" name="puertas" min="3" max="5" autocomplete="off" placeholder="Puertas" style="width: 80px;" required></label>
+                   
+                    <label for="kms"><span><i class="fas fa-tachometer-alt"></i></span><input type="number" name="kms" autocomplete="off" placeholder="KMs" required></label>
+                    
+                    <label for="potencia"><span><i class="fas fa-car-battery"></i></span><input type="number" name="potencia" autocomplete="off" placeholder="Potencia" required></label>
+                    
+                </div>
+                
+            </fieldset>
+            <div>
+                <input type="submit" class="submit" value="Guardar">
+                <input type="button" value="Eliminar" id="btnDelete" class="oculto">
+                <input type="hidden" name="txtId">
+            </div>
+        <div id="spinner-container"></div>
+        <div id="divTabla"></div>
+    </main>
+    <footer>
+        <nav>
+            <a href="#">Nosotros</a>
+            <a href="#">Anuncios</a>
+            <a href="#">Blog</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <p>Todos los derechos reservados <date>2021</date>&copy;</p>
+    </footer>
+</body>
+</html>

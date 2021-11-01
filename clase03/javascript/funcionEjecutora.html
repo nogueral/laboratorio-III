@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function saludar(){
+            console.log("Hola que tal?");
+        }
+
+        function despedir(){
+            console.log("Chau chau chauuuu");
+        }
+
+        function ejecutora(x){
+
+            x();
+        }
+
+        ejecutora(saludar);
+
+        function ejecutoraAsync(x){
+
+            setTimeout(() => {
+                x();
+            }, 3000);
+        }
+        
+        console.log("Inicio");
+        ejecutoraAsync(saludar);
+        console.log("Fin");
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+
+        const vec = new Array();
+        const vec1 = [5,7,8,9];
+        const vec2 = [34,20,45,10];
+        const vec3 = vec2;
+
+        //declaracion de array
+        //length
+        //concat()
+        //push() agrega un elemento al final del array
+        //pop() retira un elemento del array, me lo devuelve
+        //shift() me devuelve el primer elemento de la lista y lo saca
+        //unshift() agrega un elemento al principio del array
+        //map()
+        //filter()
+        //reduce()
+
+        // al declarar arrays como constantes evito perder la referencia a memoria
+        const vec4 = [...vec2, ...vec1]; //spread operator - operador de propagacion
+        console.log("Spread Operator: ");
+        console.log(vec2);
+        console.log(vec4);
+
+        console.log(vec2);
+        console.log(vec3);
+
+        vec2.push(25);
+
+        console.log(vec2);
+        console.log(vec3);
+
+        console.log(vec2.pop());
+        console.log(vec2);
+
+        //la funcion foreach puede recibir hasta 3 parametros
+       /* vec4.forEach((elemento, indice, array)=>{
+            console.log(elemento, indice, array);
+        })*/
+
+        vec4.forEach((elemento)=>{
+            console.log(elemento);
+        })
+
+        const duplicado = vec2.map((elemento)=>{
+            
+            return elemento % 2 ? elemento : elemento * 2;
+        })
+
+        //forma resumida de escribir el map
+        const duplicado2 = vec2.map(elemento=>elemento % 2 ? elemento : elemento * 2);
+
+        console.log("Funcion MAP");
+        console.log("vec2", vec2);
+        console.log("duplicado",duplicado);
+        console.log("duplicado2",duplicado2);
+
+        console.log("Funcion FILTER");
+        //si el callback devuelve true, ese elemento pasa. si devuelve false el elemento no pasa
+        const pares = vec2.filter((el)=>{
+            if(el % 2 === 0)
+            {
+                return true;
+            } else {
+                return false;
+            }
+        })
+
+        const pares2 = vec2.filter(el=>!(el % 2));
+
+        console.log(pares);
+        console.log(pares2);
+
+        console.log("Funcion REDUCE");
+        //recibe dos parametros, un callback y el valor inicial de la iteracion
+        //Si no le agrego el 0, funciona igual xq en la primera vuelta prev es el 1er elemento del array
+        //en cada iteracion, prev es lo q devuelve la iteracion anterior
+        const total = vec2.reduce((prev,actual)=>{
+            return prev + actual;
+        }, 0);
+
+        console.log("Total: ", total);
+        
+        const nombres =["pepe","ana","maria","juana"];
+        const total2 = nombres.filter(n=>n.length>4).reduce((prev,actual)=>prev+actual.length, 0);
+        console.log("Total2: ", total2);
+
+        console.log("Funcion SPLICE");
+        //Es util cuando quiero eliminar un elemento del array
+        const eliminar = [34,20,45,10];
+        //devuelve un array con los elementos sacados. el primer parametro es el indice y el 2do es la cantidad de elementos que se sacan a partir de ese indice
+        eliminar.splice(2, 2);
+        console.log("eliminar: ", eliminar);
+        const eliminar2 = [34,20,45,10];
+        let pos = eliminar2.indexOf(45);
+        eliminar2.splice(pos, 1);
+        console.log("eliminar2: ", eliminar2);
+
+        console.log("Funcion SORT");
+        //const nombres =["pepe","ana","maria","juana"];
+        //const vec2 = [34,20,45,10];
+
+        nombres.sort();
+
+        vec2.sort((a,b)=>{
+            return b - a;
+        });
+
+        console.log("nombres: ", nombres);
+        console.log("vec2: ", vec2);
+
+        console.log("Funcion SLICE");
+        //devuelve un array con los elementos que le digo, pero sin borrar el elemento
+        console.log("vec2: ", vec2);
+        console.log("Slice: ", vec2.slice(0,1));
+        console.log("vec2: ", vec2);
+
+
+    </script>
+</body>
+</html>

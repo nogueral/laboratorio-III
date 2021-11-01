@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronia</title>
+</head>
+<body>
+    <script>
+
+        // Concepto de asincronia 
+
+        console.log("Inicio");
+
+        setTimeout(() => {
+
+            console.log("Hola mundo");
+
+        }, 2000);
+
+
+        console.log("Fin");
+
+        // funcion declarada
+
+        function saludar(){
+            console.log("Hola");
+        }
+
+        // funcion expresada
+
+        let x = function saludar(){
+            console.log("Hola");
+        }
+
+        x();
+
+        // arrow function 
+
+        let y = ()=>{
+            console.log("Hola");
+        }
+
+        y();
+
+    </script>
+</body>
+</html>

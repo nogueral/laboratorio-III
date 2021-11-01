@@ -1,0 +1,138 @@
+body{
+    border: 1px solid rgba(128, 128, 128, 0.753);
+    padding: 10px;
+}
+
+.formulario{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+}
+
+span i{
+    color: rgb(29, 177, 226);
+    height: 4em;
+    margin: 5px;
+}
+
+.navegacion{
+    background-color: rgb(29, 177, 226);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+footer{
+    background-color: rgb(29, 177, 226);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.encabezado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, select{
+    background-color: rgb(214, 213, 213);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+    height: 25px;
+}
+
+.submit, #btnDelete{
+    background-color: green;
+    color: white;
+    height: 40px;
+    width: 85px;
+}
+
+.submit{
+    background-image: url('../assets/save.svg');
+    background-position: left;
+    background-size: 15px;
+    background-repeat:no-repeat;
+    width: 80px;
+    text-align: right;
+}
+
+.imagen-encabezado{
+    background-image: url('../assets/autosvarios.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+table{
+    margin: 20px auto;
+    width: 100%;
+}
+
+table, tr, th, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    width: 100%;
+}
+
+thead{
+    height: 30px;
+    background-color: burlywood;
+}
+
+.oculto{
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .navegacion{
+        flex-direction: column;
+        height: 160px;
+    }
+
+    .itemsNav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer{
+        flex-direction: column;
+    }
+
+    .fieldsetItems{
+        display: flex;
+        flex-direction: column;
+    }
+}

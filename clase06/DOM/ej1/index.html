@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>DOM</title>
+</head>
+<body>
+    <a href="http://www.google.com.ar">Ir a google</a>
+
+    <ul id="frutas">
+        <li>frutilla</li>
+        <li>melon</li>
+        <li>manzana</li>
+        <li>banana</li>
+    </ul>
+    <div id="contenedor-imagen">
+
+    </div>
+    <div id="texto">
+        <p class="rojo">Lorem 1 ipsum dolor sit amet, consectetur adipisicing elit. Quia debitis alias, sed quos error at voluptas aliquam sit, ipsa beatae molestias nesciunt commodi dignissimos culpa? Repellat architecto facere dolor molestiae!</p>
+        <p class="rojo">Lorem 2 ipsum dolor sit amet, consectetur adipisicing elit. Quia debitis alias, sed quos error at voluptas aliquam sit, ipsa beatae molestias nesciunt commodi dignissimos culpa? Repellat architecto facere dolor molestiae!</p>
+        <p class="rojo">Lorem 3 ipsum dolor sit amet, consectetur adipisicing elit. Quia debitis alias, sed quos error at voluptas aliquam sit, ipsa beatae molestias nesciunt commodi dignissimos culpa? Repellat architecto facere dolor molestiae!</p>
+    </div>
+    <script>
+       /* console.log(document);
+        console.log(document.head);
+        console.log(document.body);
+        console.log(document.links);
+        console.log(document.title);
+        console.log(document.charset);
+        console.log(document.documentElement.lang);
+        console.log(document.getElementById("frutas"));
+        console.log(document.getElementsByTagName("p"));
+        console.log(document.getElementsByClassName("rojo"));
+        console.log(document.querySelector("#texto"));
+        console.log(document.querySelectorAll(".rojo"));*/
+
+        //Atributos 
+
+        const $link = document.querySelector("a");
+
+        console.log($link);
+        console.log($link.href);
+        console.log($link.getAttribute("href"));
+        $link.setAttribute("href", "http://www.infobae.com");
+        console.log($link.href);
+        $link.setAttribute("target", "_blank");
+        $link.removeAttribute("target"); //elimina el atributo
+        $link.toggleAttribute("disabled"); //agrega y quita atributos booleanos
+        console.log($link.hasAttribute("disabled"));
+        $link.toggleAttribute("disabled"); //agrega y quita atributos booleanos
+        console.log($link.hasAttribute("disabled"));
+
+        $imagen = document.createElement("img");
+        $imagen.setAttribute("src", "https://placeimg.com/300/300/animals");
+        $imagen.setAttribute("alt", "imagen de un animal");
+        $imagen.setAttribute("data-description", "imagen de un animal");
+        $imagen.setAttribute("data-id", "1234");
+        $divImagen = document.getElementById("contenedor-imagen");
+        //$divImagen.appendChild($imagen); //crea elementos desde la funcion appendChild
+        $divImagen.innerHTML = "<img src='https://placeimg.com/200/200/arch' alt='imagen de arquitectura' />" //crea elementos desde innerHTML
+
+        let url = 'https://placeimg.com/300/200/animals';
+        let alt = 'imagen de arquitectura';
+
+        $divImagen.innerHTML = `<img src=${url} alt=${alt} />` // crea elementos de forma dinamica con backticks
+
+        $titulo = document.createElement("h1");
+        //$titulo.textContent = "Hola mundo";
+        //tambien se puede agregar el titulo creando un nodo texto
+        const nodoTexto = document.createTextNode("Soy un nodo texto");
+        $titulo.appendChild(nodoTexto);
+        $divImagen.appendChild($titulo);
+
+
+        $divParrafos = document.querySelector("#texto");
+        // tengo la referencia al nodo del DIV, para acceder a los hijos de ese nodo hago lo sig:
+        console.log($divParrafos.childNodes); // trae todos los nodos
+        console.log($divParrafos.children); // trae solo los nodos elemento
+        console.log($divParrafos.firstElementChild); // trae el primer hijo elemento
+        console.log($divParrafos.firstChild); // trae el primer hijo
+        console.log($divParrafos.lastElementChild); // trae el ultimo hijo elemento
+        console.log($divParrafos.childElementCount); // cuantos hijos tiene
+        $divParrafos.prepend($imagen); // agrego como primer elemento
+        $divParrafos.before($imagen); // agrego antes del contenedor en cuestion
+        $divParrafos.after($imagen); // agrego despues del contenedor en cuestion
+        $divParrafos.insertAdjacentElement("beforeend", $imagen);
+        console.log($divParrafos.insertBefore($imagen, $divParrafos.children[1])); //inserta antes del elemento hijo indicado por parametro
+        console.log($divParrafos.replaceChild($imagen, $divParrafos.firstElementChild)); // agrega el elemento del primer parametro y borra el del 2do param
+
+        //para borrar elementos:
+
+       /* while($divParrafos.hasChildNodes())
+        {
+            $divParrafos.removeChild($divParrafos.firstChild);
+        }*/
+
+        let elemento = $divParrafos.firstElementChild;
+
+        // como vamos recorriendo cada elemento de un nodo
+        while(elemento)
+        {
+            console.log(elemento);
+            elemento = elemento.nextElementSibling;
+            
+        }
+
+        $p = document.querySelector("p");
+        console.log($p.style);
+        $p.style.setProperty("background-color", "red");
+        $p.setAttribute("style", "color:yellow; background-color:blue");
+
+        $titulo.classList.add("rojo");
+        $titulo.classList.remove("rojo");
+        console.log($titulo.classList.contains("rojo"));
+        $titulo.classList.add("rojo");
+        $titulo.classList.replace("rojo", "letraAzul");
+
+        console.log($imagen.dataset);
+        console.log($imagen.dataset.description);
+        console.log($imagen.dataset.id);
+        $imagen.setAttribute("data-description", "cambio el titulo");
+        console.log($imagen.getAttribute("data-description"));
+    </script>
+</body>
+</html>

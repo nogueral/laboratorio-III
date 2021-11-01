@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/scripts.js" type="module"></script>
+    <title>Bienes Raices</title>
+</head>
+<body>
+    <header class="navegacion">
+        <img src="./assets/logo.png" height="80px" alt="logo-autos">
+        <nav class="itemsNav">
+            <a href="#">Nosotros</a>
+            <a href="#">Anuncios</a>
+            <a href="#">Blog</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <form action="" class="formulario">
+            <fieldset>
+                <legend>Información del anuncio</legend>
+                <label for="titulo">TITULO:</label>
+                <input type="text" class="longTextBox" name="titulo" id="titulo" placeholder="Titulo" required autocomplete="off">
+                <label for="transaccion">TRANSACCION:</label>
+                <label for="venta">Venta:</label>
+                <input type="radio" name="transaccion" id="venta" value="Venta" checked>
+                <label for="alquiler">Alquiler:</label>
+                <input type="radio" name="transaccion" id="alquiler" value="Alquiler">
+                <label for="descripcion">DESCRIPCION:</label>
+                <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion" required autocomplete="off">
+                <label for="precio">PRECIO:</label>
+                <input type="number" name="precio" id="precio" placeholder="Precio" autocomplete="off" required>
+                <label for="precio">CANTIDAD DE BAÑOS:</label>
+                <input type="number" name="cantBanios" id="cantBanios" autocomplete="off" placeholder="Baños" required>
+                <label for="precio">CANTIDAD DE AUTOS:</label>
+                <input type="number" name="cantAutos" id="cantAutos" autocomplete="off" placeholder="Autos" required>
+                <label for="precio">CANTIDAD DE DORMITORIOS:</label>
+                <input type="number" name="cantDorm" id="cantDorm" autocomplete="off" placeholder="Dormitorios" required>
+            </fieldset>
+            <div>
+                <input type="submit" class="submit" value="Guardar">
+                <input type="button" value="Eliminar" id="btnDelete" class="oculto">
+                <input type="button" value="Cancelar" id="btnCxl" class="oculto">
+                <input type="hidden" name="txtId">
+            </div>
+        <div id="spinner-container"></div>
+        <div id="divTabla"></div>
+        </form>
+    </main>
+    <footer>
+        <nav>
+            <a href="#">Nosotros</a>
+            <a href="#">Anuncios</a>
+            <a href="#">Blog</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <p>Todos los derechos reservados <date>2021</date>&copy;</p>
+    </footer>
+</body>
+</html>
