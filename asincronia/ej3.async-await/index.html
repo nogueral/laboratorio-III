@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronia con async await</title>
+</head>
+<body>
+    <script>
+
+       /* function validarPar(numero){
+            return new Promise((resolve, reject)=>{
+
+                setTimeout(() => {
+                    if(typeof numero === "number"){
+
+                        let retorno = "Es par";
+                        if(numero % 2){
+                            retorno = "Es impar";
+                        };
+
+                        resolve(retorno);
+                    }
+
+                    reject("Eso no es par ni impar");
+
+                }, 3000);
+            });
+        };*/
+
+       /*let p = validarPar(24);
+
+        p.then((data)=>{
+
+        });
+
+        p.catch((error)=>{
+
+        });*/
+
+       /* console.log("inicio");
+        validarPar("Hola")
+        .then((data)=>{
+            console.log(data);
+        })
+        .catch((error)=>{
+            console.error(error);
+        })
+        console.log("fin");*/
+
+
+        function sumarPromise(a, b){
+            
+            return new Promise((resolve, reject)=>{
+
+                setTimeout(() => {
+                    if(typeof a === "number" && typeof b === "number"){
+                        let suma = a + b;
+                        console.log("La suma es: " + suma);
+                        resolve(suma);
+                    }
+
+                    reject("Parametros invalidos en la suma");
+                }, 2000);
+
+            });
+        };
+
+        function cuadradoPromise(a){
+
+            return new Promise((resolve, reject)=>{
+
+            setTimeout(() => {
+                if(typeof a === "number"){
+                    let cuadrado = a * a;
+                    console.log("El cuadrado es: " + cuadrado);
+                    resolve(cuadrado);
+                }
+
+                reject("Parametros invalidos en el cuadrado");
+            }, 2000);
+
+            });
+        }
+
+        function multiplicarPromise(a, b){
+            
+            return new Promise((resolve, reject)=>{
+
+                setTimeout(() => {
+                    if(typeof a === "number" && typeof b === "number"){
+                        let producto = a * b;
+                        console.log("el producto es: " + producto);
+                        resolve(producto);
+                    }
+
+                    reject("Parametros invalidos en el producto");
+                }, 2000);
+
+            });
+        };
+
+        function restarPromise(a, b){
+            
+            return new Promise((resolve, reject)=>{
+
+                setTimeout(() => {
+                    if(typeof a === "number" && typeof b === "number"){
+                        let resta = a - b;
+                        console.log("la resta es: " + resta);
+                        resolve(resta);
+                    }
+
+                    reject("Parametros invalidos en la resta");
+                }, 2000);
+
+            });
+        };
+
+        function informar(a){
+            console.log("El resultado es: " + a);
+        }
+
+        async function calcular(a, b){
+
+            try {
+                
+                let suma = await sumarPromise(a, b);
+                let cuad = await cuadradoPromise(suma);
+                let prod = await multiplicarPromise(cuad, 10);
+                let resta = await restarPromise(prod, 2);
+                informar(resta);
+
+            } catch (error) {
+                
+                console.error(error);
+            }
+
+        }
+
+      console.log("inicio");
+
+      /*sumarPromise(3,4)
+      .then((suma)=>{
+        return cuadradoPromise(suma);
+      })
+      .then((cuadrado)=>{
+        return multiplicarPromise(cuadrado, 10);
+      })
+      .then((producto)=>{
+        return restarPromise(producto, 2);
+      })
+      .then((resta)=>{
+        informar(resta);
+      })
+      .catch((error)=>{
+        console.error(error);
+      });*/
+
+      calcular(3,4);
+      console.log("fin");
+
+    </script>
+</body>
+</html>
