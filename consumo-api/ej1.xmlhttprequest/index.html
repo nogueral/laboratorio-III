@@ -1,15 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/index.js" defer></script>
+    <link rel="stylesheet" href="./css/index.css">
     <title>Ajax</title>
 </head>
 <body>
-    <button onclick="getPersonasAjax();">traer Personas AJAX</button>
+    <button onclick="getPersonasAjax();">Traer Personas Ajax</button>
+    <br>
+    <button onclick="getPersonasFetch();">Traer Personas Fetch</button>
+    <br>
+    <button onclick="getPersonasFetchAsync();">Traer Personas Fetch Async</button>
+    <br>
+    <button onclick="getPersonasAxios();">Traer Personas Axios</button>
+    <br>
+    <button onclick="getPersonasAxiosAsync();">Traer Personas Axios Async</button>
+    <br>
+    <button onclick="createPersonasAjax();">Alta Juan Perez</button>
+    <br>
+    <button onclick="createPersonasFetch();">Alta Miguel</button>
+    <br>
+    <button onclick="createPersonasAxiosAsync();">Alta Lucia</button>
+    <br>
+    <button onclick="deletePersonasAjax(9);">Delete 9</button>
+    <br>
+    <button onclick="deletePersonaFetch(8);">Delete 8</button>
+    <br>
+    <button onclick="deletePersonaAxiosAsync(2);">Delete 2</button>
+    <br>
+    <button onclick="updatePersonaAjax();">Modificar Lucia</button>
+    <br>
+    <button onclick="updatePersonaFetch();">Modificar Mariana</button>
+    <br>
+    <button onclick="updatePersonasAxiosAsync();">Modificar Lucia con Axios</button>
+    <br>
+    <div class="spinner">
 
-    <div class="spinner"></div>
+    </div>
 </body>
 </html>
